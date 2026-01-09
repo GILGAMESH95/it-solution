@@ -1,0 +1,8 @@
+
+{
+  "name": "IT Solution - IT Infrastructure & Security",
+  "description": "Professional landing page for IT Solution - specializing in access control systems (ACS), video surveillance, server solutions, and network engineering. Features an AI-powered project consultant.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
