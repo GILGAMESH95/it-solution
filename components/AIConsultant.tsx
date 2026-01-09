@@ -116,7 +116,6 @@ const AIConsultant: React.FC = () => {
                   disabled={isLoading}
                   className="flex-1 bg-transparent border-none outline-none text-white font-mono placeholder:text-zinc-700"
                   placeholder="Enter command or query..."
-                  autoFocus
                 />
               </div>
             </div>
