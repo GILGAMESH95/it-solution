@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 :root {
+  --bg-main: #ffffff;
+  --bg-card: #f9fafb;
+  --border-color: #e5e7eb;
+  --accent: #00f0ff;
+}
+
+.dark {
   --bg-main: #09090b;
   --bg-card: #18181b;
   --border-color: #27272a;
@@ -12,11 +19,23 @@
 body {
   font-family: var(--font-inter);
   background-color: var(--bg-main);
-  color: #e4e4e7;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.dark body {
+  color: #e4e4e7;
+}
+
+body:not(.dark) {
+  color: #18181b;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-space-grotesk);
 }
 
@@ -33,9 +52,20 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   z-index: -1;
   background-size: 50px 50px;
-  background-image: 
+}
+
+.dark .tech-grid {
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+.tech-grid:not(.dark .tech-grid) {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
   -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
 }
@@ -59,8 +89,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
-.tech-card:hover {
+.dark .tech-card:hover {
   border-color: #52525b;
+  transform: translateY(-2px);
+}
+
+.tech-card:not(.dark .tech-card):hover {
+  border-color: #d1d5db;
   transform: translateY(-2px);
 }
 
@@ -74,14 +109,26 @@ h1, h2, h3, h4, h5, h6 {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
+.dark ::-webkit-scrollbar-track {
   background: var(--bg-main);
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-track:not(.dark ::-webkit-scrollbar-track) {
+  background: #f9fafb;
+}
+
+.dark ::-webkit-scrollbar-thumb {
   background: #3f3f46;
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:not(.dark ::-webkit-scrollbar-thumb) {
+  background: #d1d5db;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #52525b;
+}
+
+::-webkit-scrollbar-thumb:not(.dark ::-webkit-scrollbar-thumb):hover {
+  background: #9ca3af;
 }

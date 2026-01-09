@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const inter = Inter({
     subsets: ['latin', 'cyrillic'],
@@ -32,10 +33,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ru" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+        <html lang="ru" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
             <body className="antialiased">
-                <div className="tech-grid"></div>
-                {children}
+                <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+                    <div className="tech-grid"></div>
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     );

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { ThemeToggle } from './ThemeToggle';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,13 +16,13 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <header className="fixed w-full z-50 top-0 bg-[#09090b]/90 backdrop-blur-md tech-border-b">
+      <header className="fixed w-full z-50 top-0 bg-[#09090b]/90 dark:bg-[#09090b]/90 bg-white/90 backdrop-blur-md tech-border-b">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-6 h-6 bg-white flex items-center justify-center">
-              <div className="w-2 h-2 bg-black"></div>
+            <div className="w-6 h-6 bg-white dark:bg-white bg-zinc-900 flex items-center justify-center">
+              <div className="w-2 h-2 bg-black dark:bg-black bg-white"></div>
             </div>
-            <span className="text-xl font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors font-['Space_Grotesk']">
+            <span className="text-xl font-bold tracking-tight text-white dark:text-white text-zinc-900 group-hover:text-cyan-400 transition-colors font-['Space_Grotesk']">
               IT SOLUTION
             </span>
           </Link>
@@ -31,19 +32,20 @@ const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors group"
+                className="flex items-center gap-2 text-sm text-zinc-400 dark:text-zinc-400 text-zinc-600 hover:text-white dark:hover:text-white hover:text-zinc-900 transition-colors group"
               >
-                <span className="mono text-[10px] text-zinc-600 group-hover:text-cyan-400">/{link.label}</span>
+                <span className="mono text-[10px] text-zinc-600 dark:text-zinc-600 text-zinc-400 group-hover:text-cyan-400">/{link.label}</span>
                 <span className="uppercase tracking-wide font-medium">{link.name}</span>
               </a>
             ))}
           </nav>
 
           <div className="hidden lg:flex items-center gap-6">
-            <div className="mono text-[10px] text-zinc-500">SYS_STATUS: <span className="text-emerald-500">ONLINE</span></div>
+            <div className="mono text-[10px] text-zinc-500 dark:text-zinc-500 text-zinc-600">SYS_STATUS: <span className="text-emerald-500">ONLINE</span></div>
+            <ThemeToggle />
             <a
               href="#contact"
-              className="px-5 py-2 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-cyan-400 transition-colors"
+              className="px-5 py-2 bg-white dark:bg-white bg-zinc-900 text-black dark:text-black text-white text-xs font-bold uppercase tracking-widest hover:bg-cyan-400 transition-colors"
             >
               Contact_Us
             </a>
