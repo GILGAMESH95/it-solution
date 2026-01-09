@@ -48,11 +48,11 @@ const AIConsultant: React.FC = () => {
   };
 
   return (
-    <section id="ai-consultant" className="py-24 border-b border-zinc-800 bg-zinc-950">
+    <section id="ai-consultant" className="py-24 bg-white dark:bg-black border-b border-zinc-200 dark:border-zinc-800">
       <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-4">
-          <div className="mono text-cyan-500 text-xs tracking-widest mb-4">/// AI_ENGINEERING_CORE</div>
-          <h2 className="text-4xl font-bold text-white font-['Space_Grotesk'] uppercase mb-6">Automated <br /> Project Calculation</h2>
+          <span className="mono text-cyan-500 dark:text-cyan-500 text-xs tracking-widest mb-4 block">/// AI_ENGINEERING_CORE</span>
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-white font-['Space_Grotesk'] uppercase mb-4">Automated <br /> Project Calculation</h2>
           <p className="text-zinc-400 mb-8 leading-relaxed">
             Access our proprietary neural network trained on enterprise security standards.
             Input your facility dimensions and requirements to generate a preliminary hardware manifest.

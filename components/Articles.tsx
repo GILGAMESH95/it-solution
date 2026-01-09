@@ -31,32 +31,33 @@ const articles: Article[] = [
 
 const Articles: React.FC = () => {
   return (
-    <section id="articles" className="py-24 border-b border-zinc-800 bg-[#09090b]">
+    <section id="articles" className="py-24 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between mb-12">
-           <h2 className="text-3xl font-bold text-white font-['Space_Grotesk'] uppercase">System Insights</h2>
-           <a href="#" className="mono text-xs text-cyan-500 hover:underline">[VIEW_ALL_LOGS]</a>
+        <div className="mb-12">
+          <span className="mono text-cyan-500 dark:text-cyan-500 text-xs tracking-widest mb-4 block">/// KNOWLEDGE_BASE</span>
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-white font-['Space_Grotesk'] uppercase mb-4">Latest Insights</h2>
+          <p className="text-zinc-600 dark:text-zinc-500 max-w-2xl">Stay informed on deployment methodologies, security standards, and technical breakthroughs.</p>
         </div>
 
-        <div className="border-t border-zinc-800">
+        <div className="border-t border-zinc-200 dark:border-zinc-800">
           {articles.map((article, index) => (
-            <div key={article.id} className="group border-b border-zinc-800 py-8 flex flex-col md:flex-row gap-6 md:items-center hover:bg-zinc-900/30 transition-colors cursor-pointer">
+            <div key={article.id} className="group border-b border-zinc-200 dark:border-zinc-800 py-8 flex flex-col md:flex-row gap-6 md:items-center hover:bg-zinc-100 dark:hover:bg-zinc-900/30 transition-colors cursor-pointer">
               <div className="md:w-32 mono text-xs text-zinc-500">
-                 LOG_ID: {article.id.padStart(3, '0')}
+                LOG_ID: {article.id.padStart(3, '0')}
               </div>
               <div className="md:w-48">
-                 <span className="inline-block px-2 py-1 border border-zinc-700 text-[10px] uppercase text-zinc-400 font-bold group-hover:border-cyan-500 group-hover:text-cyan-500 transition-colors">
-                   {article.category}
-                 </span>
+                <span className="inline-block px-2 py-1 border border-zinc-700 text-[10px] uppercase text-zinc-400 font-bold group-hover:border-cyan-500 group-hover:text-cyan-500 transition-colors">
+                  {article.category}
+                </span>
               </div>
               <div className="flex-1">
-                 <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2 font-['Space_Grotesk']">
-                   {article.title}
-                 </h3>
-                 <p className="text-zinc-500 text-sm max-w-2xl">{article.excerpt}</p>
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2 font-['Space_Grotesk']">
+                  {article.title}
+                </h3>
+                <p className="text-zinc-500 text-sm max-w-2xl">{article.excerpt}</p>
               </div>
               <div className="md:w-32 text-right mono text-xs text-zinc-600">
-                 {article.date}
+                {article.date}
               </div>
               <div className="hidden md:block text-zinc-700 group-hover:text-white group-hover:translate-x-2 transition-all">
                 →
